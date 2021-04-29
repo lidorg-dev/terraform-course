@@ -1,5 +1,5 @@
 module "consul" {
-  source   = "https://github.com/lidorg-dev/terraform-consul-module"
+  source   = "./terraform-consul-module-master/"
   key_name = aws_key_pair.mykey.key_name
   key_path = var.PATH_TO_PRIVATE_KEY
   region   = var.AWS_REGION
@@ -14,4 +14,3 @@ module "consul" {
 output "consul-output" {
   value = module.consul.server_address
 }
-
